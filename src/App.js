@@ -8,7 +8,9 @@ function App() {
 const [homeScore, setHomeScore] = useState(0);
 const [awayScore, setAwayScore] = useState(0);
 const [currentQuarter, setQuarter] = useState(1);
-
+const [currentYard , setYard] = useState(21);
+const [ toGo , newToGo] = useState(7);
+const [ ]
   return (
     <div className="container">
       <section className="scoreboard">
@@ -36,11 +38,11 @@ const [currentQuarter, setQuarter] = useState(1);
       </div>
       <div className="toGo">
         <h3 className="toGo__title">To Go</h3>
-        <div className="toGo__value">7</div>
+        <div className="toGo__value">{toGo}</div>
       </div>
       <div className="ballOn">
         <h3 className="ballOn__title">Ball on</h3>
-        <div className="ballOn__value">21</div>
+        <div className="ballOn__value">{currentYard}</div>
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
@@ -63,17 +65,20 @@ const [currentQuarter, setQuarter] = useState(1);
          
           <button className="quarterButton" onClick={() => setQuarter(currentQuarter + 1)}>Next</button>
           <button className="quarterButton" onClick ={() => setQuarter(currentQuarter -1 )}>Back</button>
+          <button className="quarterButton" onClick={() => setQuarter(currentQuarter + 1)}>Next</button>
+          <button className="quarterButton" onClick ={() => setQuarter(currentQuarter -1 )}>Back</button>
         </div>
         <div className="homeButtons">
          
-         <button className="quarterButton" ><form>
-  <label>
-     Ball On:
-    <input type="text" name="name" />
-  </label>
-  <input type="submit" value="Submit" />
-</form></button>
-         <button className="quarterButton" onClick ={() => setQuarter(currentQuarter -1 )}>Back Yard</button>
+         <button className="quarterButton" onClick={() => setYard(currentYard+ 1)} >
+        Next Yard
+</button>
+         <button className="quarterButton" onClick ={() => setYard(currentYard -1 )}>Back Yard</button>
+
+         <button className="quarterButton" onClick={() => newToGo(toGo + 1)} >
+        To Go +
+</button>
+         <button className="quarterButton" onClick ={() => newToGo(toGo -1 )}>To Go -</button>
        </div>
       </section>
     </div>
