@@ -4,7 +4,7 @@ import "./App.css";
 const BottomRow = () => {
   const [currentQuarter, setQuarter] = useState(1);
   return (
-    <div className="bottomRow">
+    <div className="bottomRow1">
       <div className="down">
         <h3 className="down__title">Down</h3>
         <div className="down__value">3</div>

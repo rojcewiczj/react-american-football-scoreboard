@@ -10,7 +10,7 @@ const [awayScore, setAwayScore] = useState(0);
 const [currentQuarter, setQuarter] = useState(1);
 const [currentYard , setYard] = useState(21);
 const [ toGo , newToGo] = useState(7);
-const [ ]
+const [ down , setDown ] = useState(3);
   return (
     <div className="container">
       <section className="scoreboard">
@@ -34,7 +34,7 @@ const [ ]
            
       <div className="down">
         <h3 className="down__title">Down</h3>
-        <div className="down__value">3</div>
+        <div className="down__value">{down}</div>
       </div>
       <div className="toGo">
         <h3 className="toGo__title">To Go</h3>
@@ -65,8 +65,8 @@ const [ ]
          
           <button className="quarterButton" onClick={() => setQuarter(currentQuarter + 1)}>Next</button>
           <button className="quarterButton" onClick ={() => setQuarter(currentQuarter -1 )}>Back</button>
-          <button className="quarterButton" onClick={() => setQuarter(currentQuarter + 1)}>Next</button>
-          <button className="quarterButton" onClick ={() => setQuarter(currentQuarter -1 )}>Back</button>
+          <button className="quarterButton" onClick={() => setDown (down + 1)}>Down +</button>
+          <button className="quarterButton" onClick ={() => setDown(down -1 )}>Down -</button>
         </div>
         <div className="homeButtons">
          
