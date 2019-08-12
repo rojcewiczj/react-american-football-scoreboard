@@ -7,6 +7,7 @@ function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
 const [homeScore, setHomeScore] = useState(0);
 const [awayScore, setAwayScore] = useState(0);
+const [currentQuarter, setQuarter] = useState(1);
 
   return (
     <div className="container">
@@ -25,8 +26,29 @@ const [awayScore, setAwayScore] = useState(0);
             <div className="away__score">{awayScore}</div>    
           </div>
         </div>
-        <BottomRow />
+        
+     <BottomRow />
+     <div className="bottomRow">
+           
+      <div className="down">
+        <h3 className="down__title">Down</h3>
+        <div className="down__value">3</div>
+      </div>
+      <div className="toGo">
+        <h3 className="toGo__title">To Go</h3>
+        <div className="toGo__value">7</div>
+      </div>
+      <div className="ballOn">
+        <h3 className="ballOn__title">Ball on</h3>
+        <div className="ballOn__value">21</div>
+      </div>
+      <div className="quarter">
+        <h3 className="quarter__title">Quarter</h3>
+        <div className="quarter__value">{currentQuarter}</div>
+      </div>
+      </div>
       </section>
+      
       <section className="buttons">
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
@@ -37,6 +59,22 @@ const [awayScore, setAwayScore] = useState(0);
           <button className="awayButtons__touchdown" onClick={() => setAwayScore(awayScore + 7)}>Away Touchdown</button>
           <button className="awayButtons__fieldGoal" onClick ={() => setAwayScore(awayScore + 3)}>Away Field Goal</button>
         </div>
+<div className="homeButtons">
+         
+          <button className="quarterButton" onClick={() => setQuarter(currentQuarter + 1)}>Next</button>
+          <button className="quarterButton" onClick ={() => setQuarter(currentQuarter -1 )}>Back</button>
+        </div>
+        <div className="homeButtons">
+         
+         <button className="quarterButton" ><form>
+  <label>
+     Ball On:
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Submit" />
+</form></button>
+         <button className="quarterButton" onClick ={() => setQuarter(currentQuarter -1 )}>Back Yard</button>
+       </div>
       </section>
     </div>
   );

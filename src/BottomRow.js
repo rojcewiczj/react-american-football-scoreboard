@@ -21,7 +21,10 @@ const BottomRow = () => {
         <h3 className="quarter__title">Quarter</h3>
         <div className="quarter__value">{currentQuarter}</div>
       </div>
+     
     </div>
+
+
   );
 };
 
